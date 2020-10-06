@@ -34,9 +34,13 @@ class Doctor
       name = doctor.fetch("name")
       id = doctor.fetch("id").to_i
       specialty = doctor.fetch("specialty")
-      Doctor.new({ :name => name, :id => id, specialty => specialty })
+      Doctor.new({ :name => name, :id => id, :specialty => specialty })
     else
       nil
     end
   end
+  def delete()
+    deletequery =DB.exec ("DELETE FROM doctor WHERE id = #{@id};")
+  end
 end
+
