@@ -1,4 +1,4 @@
 require("pg")
 require("dotenv/load")
 
-DB = PG.connect({ :dbname => "doctors_office_test", :user =>'postgres',' :password => ENV['pgpass']})
+DB = PG.connect({ :dbname => "doctors_office", :user =>'postgres',' :password => ENV['pgpass']})
