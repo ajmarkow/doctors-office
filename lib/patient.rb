@@ -51,4 +51,20 @@ class Patient
     @name = name
     DB.exec("UPDATE patient SET name = '#{@name}' WHERE id = #{@id};")
   end
+
+  def self.find_by_doctor(doc_id)
+    patients = []
+    returned_patients = DB.exec("SELECT * FROM patient WHERE doctor_id = #{doc_id};")
+    returned_patients.each() do |patient|
+      name = patient.fetch("name")
+      id = patient.fetch("id")
+      birthdate = patient.fetch("birthdate")
+      patients.push(Patient.new({:name => name, :doctor_id => doc_id, :id => id}))
+    end
+    patients
+  end
+  
+  def doctor
+    Doctor.find(@doctor_id)
+  end
 end

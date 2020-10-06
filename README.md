@@ -28,9 +28,9 @@ By **{List of contributors}**
 
 ## User Stories
 
--As a doctor, want to see list of patients
--As an administrator, want to add a doctor with name and speciality, add a patient with name and with birthdate.
--As an administrator, want to assign patients to doctors, one to many.
+-As a doctor, want to see list of patients +
+-As an administrator, want to add a doctor with name and speciality x, add a patient with name and with birthdate x.
+-As an administrator, want to assign patients to doctors x, one to many.
 
 ### License
 
