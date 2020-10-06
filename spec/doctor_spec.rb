@@ -33,14 +33,23 @@ describe ("#Doctor") do
       doctor2.save()
       expect(Doctor.find(doctor.id)).to(eq(doctor))
     end
+  end
 
-    describe (".delete") do
-      it("deletes") do
-        testdoctor = Doctor.new({ :name => "larem", :id => nil, :specialty => "internal medicine" })
-        testdoctor.save()
-        testdoctor.delete()
-        expect(Doctor.all).to(eq([]))
-      end
+  describe (".delete") do
+    it("deletes") do
+      testdoctor = Doctor.new({ :name => "larem", :id => nil, :specialty => "internal medicine" })
+      testdoctor.save()
+      testdoctor.delete()
+      expect(Doctor.all).to(eq([]))
+    end
+  end
+
+  describe("#update") do
+    it("updates a doctor by id") do
+      doctor = Doctor.new({ :name => "larem", :id => nil, :specialty => "internal medicine" })
+      doctor.save()
+      doctor.update("Fred")
+      expect(doctor.name).to(eq("Fred"))
     end
   end
 end

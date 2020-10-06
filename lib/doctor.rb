@@ -39,8 +39,14 @@ class Doctor
       nil
     end
   end
+ 
   def delete()
     deletequery =DB.exec ("DELETE FROM doctor WHERE id = #{@id};")
+  end
+
+  def update(name)
+    @name = name
+    DB.exec("UPDATE doctor SET name = '#{@name}' WHERE id = #{@id};")
   end
 end
 
